@@ -6,7 +6,7 @@
     <description>Recent content on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vatsalyatandon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Getting started with website</title>
       <link>https://vatsalyatandon.github.io/posts/first/</link>
-      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://vatsalyatandon.github.io/posts/first/</guid>
       <description>First Post Thanks to spf13 and bep for creating the world&amp;rsquo;s fastest static site generator Hugo. Kudos to hugo-coder for this theme!
