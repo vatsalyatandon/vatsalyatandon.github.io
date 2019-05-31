@@ -3,41 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://vatsalyatandon.github.io/posts/first/</loc>
+    <loc>https://vatsalyatandon.github.io/posts/first/</loc>
     <lastmod>2018-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://vatsalyatandon.github.io/posts/</loc>
-    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://vatsalyatandon.github.io/</loc>
+    <loc>https://vatsalyatandon.github.io/posts/</loc>
     <lastmod>2018-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vatsalyatandon.github.io/about/</loc>
-  </url>
-  
-  <url>
-    <loc>http://vatsalyatandon.github.io/categories/</loc>
+    <loc>https://vatsalyatandon.github.io/</loc>
+    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vatsalyatandon.github.io/contact/</loc>
+    <loc>https://vatsalyatandon.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>http://vatsalyatandon.github.io/experience/</loc>
+    <loc>https://vatsalyatandon.github.io/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://vatsalyatandon.github.io/tags/</loc>
+    <loc>https://vatsalyatandon.github.io/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatsalyatandon.github.io/experience/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vatsalyatandon.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
