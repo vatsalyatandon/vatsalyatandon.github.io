@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vatsalya Tandon</title>
+    <link>http://www.example.com/</link>
+    <description>Recent content on Vatsalya Tandon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 31 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting started with website</title>
+      <link>http://www.example.com/posts/first/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/posts/first/</guid>
+      <description>First Post Thanks to spf13 and bep for creating the world&amp;rsquo;s fastest static site generator Hugo. Kudos to hugo-coder for this theme!
+Hugo is a static site engine written in Go.
+It makes use of a variety of open source projects including:
+ Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://www.example.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/about/</guid>
+      <description>I am a third year undergraduate at IIT Kanpur, with my major being Chemical Engineering. My primary interests lie in the field of application of Data Science for Social Good. This is the reason I co-founded the IIT Consulting Group. Apart from that I have a profound interest in Machine Learning, particularly in the domain of Natural Language Processing and Computer Vision. I happen to be one of the Senator at the Students&amp;rsquo; Gymkhana, IITK for the term 2019-20.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://www.example.com/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/contact/</guid>
+      <description>Have questions or suggestions? Feel free to
+ Email me at vatsalt@iitk.ac.in or Connect on LinkedIn.  </description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>http://www.example.com/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/experience/</guid>
+      <description>Predicitng Polio recurrence with Rotary International I worked with team as a part of IITK Consulting Group, in a collaboration with Rotary International to develop a novel approach that predicts the probability of re-occurence of Polio in a specific region based on the following parameters :-
+ Cleanliness Healthcare Facilities Santitation Weather/Temperature Migration  We used a semi-supervised learning algorithm to divide cities into cohorts and then used predict probabilities.</description>
+    </item>
+    
+  </channel>
+</rss>
