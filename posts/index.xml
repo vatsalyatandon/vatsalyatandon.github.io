@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Vatsalya Tandon</title>
-    <link>http://www.example.com/posts/</link>
+    <link>http://vatsalyatandon.github.io/posts/</link>
     <description>Recent content in Posts on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 31 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://vatsalyatandon.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Getting started with website</title>
-      <link>http://www.example.com/posts/first/</link>
+      <link>http://vatsalyatandon.github.io/posts/first/</link>
       <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.example.com/posts/first/</guid>
+      <guid>http://vatsalyatandon.github.io/posts/first/</guid>
       <description>First Post Thanks to spf13 and bep for creating the world&amp;rsquo;s fastest static site generator Hugo. Kudos to hugo-coder for this theme!
 Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:

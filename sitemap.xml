@@ -3,41 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.example.com/posts/first/</loc>
+    <loc>http://vatsalyatandon.github.io/posts/first/</loc>
     <lastmod>2018-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.example.com/posts/</loc>
-    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/</loc>
+    <loc>http://vatsalyatandon.github.io/posts/</loc>
     <lastmod>2018-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.example.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/categories/</loc>
+    <loc>http://vatsalyatandon.github.io/</loc>
+    <lastmod>2018-05-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.example.com/contact/</loc>
+    <loc>http://vatsalyatandon.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>http://www.example.com/experience/</loc>
+    <loc>http://vatsalyatandon.github.io/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.example.com/tags/</loc>
+    <loc>http://vatsalyatandon.github.io/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>http://vatsalyatandon.github.io/experience/</loc>
+  </url>
+  
+  <url>
+    <loc>http://vatsalyatandon.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
