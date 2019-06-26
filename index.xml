@@ -5,37 +5,25 @@
     <link>https://vatsalyatandon.github.io/</link>
     <description>Recent content on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 31 May 2019 00:00:00 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Jun 2019 00:10:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vatsalyatandon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Getting started with website</title>
-      <link>https://vatsalyatandon.github.io/posts/first/</link>
-      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://vatsalyatandon.github.io/posts/first/</guid>
-      <description>First Post Thanks to spf13 and bep for creating the world&amp;rsquo;s fastest static site generator Hugo. Kudos to hugo-coder-portfolio for this theme!
-Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
+      <title>About</title>
       <link>https://vatsalyatandon.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Jun 2019 00:10:00 +0530</pubDate>
       
       <guid>https://vatsalyatandon.github.io/about/</guid>
-      <description>I am a third year undergraduate at IIT Kanpur, with my major being Chemical Engineering. My primary interests lie in the field of application of Data Science for Social Good. This is the reason I co-founded the IIT Consulting Group. Apart from that I have a profound interest in Machine Learning, particularly in the domain of Natural Language Processing and Computer Vision. I happen to be one of the Senator at the Students&amp;rsquo; Gymkhana, IITK for the term 2019-20.</description>
+      <description>I am a third year undergraduate at IIT Kanpur, with my major being Chemical Engineering. My primary interests lie in the field of application of Data Science for Social Good. This is the reason I co-founded the IITK Consulting Group. Apart from that I have a profound interest in Machine Learning, particularly in the domain of Natural Language Processing and Computer Vision. I happen to be one of the Senator at the Students&amp;rsquo; Gymkhana, IITK for the term 2019-20.</description>
     </item>
     
     <item>
       <title>Contact</title>
       <link>https://vatsalyatandon.github.io/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Jun 2019 00:10:00 +0530</pubDate>
       
       <guid>https://vatsalyatandon.github.io/contact/</guid>
       <description>Have questions or suggestions? Feel free to
@@ -43,13 +31,13 @@ It makes use of a variety of open source projects including:
     </item>
     
     <item>
-      <title>Experience</title>
-      <link>https://vatsalyatandon.github.io/experience/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>First Post</title>
+      <link>https://vatsalyatandon.github.io/posts/post-1/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:25 +0530</pubDate>
       
-      <guid>https://vatsalyatandon.github.io/experience/</guid>
-      <description>Predicitng Polio recurrence with Rotary International I worked with team as a part of IITK Consulting Group, in a collaboration with Rotary International to develop a novel approach that predicts the probability of re-occurence of Polio in a specific region based on the following parameters :-
- Cleanliness Healthcare Facilities Santitation Weather/Temperature Migration  We used a semi-supervised learning algorithm to divide cities into cohorts and then used predict probabilities.</description>
+      <guid>https://vatsalyatandon.github.io/posts/post-1/</guid>
+      <description>Thanks to spf13 and bep for creating the world&amp;rsquo;s fastest static site generator Hugo. Kudos to vividvilla for this theme!
+Hugo is a static site engine written in Go. Learn more and contribute on GitHub.</description>
     </item>
     
   </channel>

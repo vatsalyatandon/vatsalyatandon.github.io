@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Vatsalya Tandon</title>
-    <link>https://vatsalyatandon.github.io/posts/</link>
-    <description>Recent content in Posts on Vatsalya Tandon</description>
+    <title>hugo on Vatsalya Tandon</title>
+    <link>https://vatsalyatandon.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Jun 2019 00:00:25 +0530</lastBuildDate>
     
-	<atom:link href="https://vatsalyatandon.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vatsalyatandon.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
