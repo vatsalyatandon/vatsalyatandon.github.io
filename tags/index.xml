@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jun 2019 00:00:25 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 00:01:30 +0530</lastBuildDate>
     
 	<atom:link href="https://vatsalyatandon.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,81 @@
     <item>
       <title>blog</title>
       <link>https://vatsalyatandon.github.io/tags/blog/</link>
-      <pubDate>Wed, 26 Jun 2019 00:00:25 +0530</pubDate>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
       
       <guid>https://vatsalyatandon.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>detection</title>
+      <link>https://vatsalyatandon.github.io/tags/detection/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/detection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://vatsalyatandon.github.io/tags/image/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://vatsalyatandon.github.io/tags/js/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>m5.js</title>
+      <link>https://vatsalyatandon.github.io/tags/m5.js/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/m5.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ml</title>
+      <link>https://vatsalyatandon.github.io/tags/ml/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>second</title>
+      <link>https://vatsalyatandon.github.io/tags/second/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/second/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tensorflow</title>
+      <link>https://vatsalyatandon.github.io/tags/tensorflow/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yolo</title>
+      <link>https://vatsalyatandon.github.io/tags/yolo/</link>
+      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/tags/yolo/</guid>
       <description></description>
     </item>
     

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Vatsalya Tandon</title>
-    <link>https://vatsalyatandon.github.io/posts/</link>
-    <description>Recent content in Posts on Vatsalya Tandon</description>
+    <title>ml on Vatsalya Tandon</title>
+    <link>https://vatsalyatandon.github.io/tags/ml/</link>
+    <description>Recent content in ml on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Jun 2019 00:01:30 +0530</lastBuildDate>
     
-	<atom:link href="https://vatsalyatandon.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vatsalyatandon.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,16 +22,6 @@ This whole task requires the following two libraries :
  ml5.js, an easy-to-use ML framework built on top of Tensorflow.js
  p5.js, a JS library to facilitate easy design and drawing functionality
   1) Create directory and files First of all create a directory of the name of your project (say &amp;ldquo;YOLO-ML5&amp;rdquo;).</description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>https://vatsalyatandon.github.io/posts/post-1/</link>
-      <pubDate>Wed, 26 Jun 2019 00:00:25 +0530</pubDate>
-      
-      <guid>https://vatsalyatandon.github.io/posts/post-1/</guid>
-      <description>Thanks to spf13 and bep for creating the world&amp;rsquo;s fastest static site generator Hugo. Kudos to vividvilla for this theme!
-Hugo is a static site engine written in Go. Learn more and contribute on GitHub.</description>
     </item>
     
   </channel>
