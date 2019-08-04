@@ -6,10 +6,37 @@
     <description>Recent content on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jun 2019 00:10:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 04 Aug 2019 00:02:30 +0530</lastBuildDate>
     
 	<atom:link href="https://vatsalyatandon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analysing FIFA 19 Data - Part 2</title>
+      <link>https://vatsalyatandon.github.io/posts/fifa-2/</link>
+      <pubDate>Sun, 04 Aug 2019 00:02:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/posts/fifa-2/</guid>
+      <description>In this blog post, we are going to analyse the complete dataset from the FIFA 19 videogame, containing all the players currently playing professional football at all levels, including some fake players created by EA for future simulations. The dataset was made available by Sofifa.
+We can divide the whole post into 2 segments, namely:
+ Feature Engineering and Analysis
+ Clustering
+  Link for part 1.
+2) Clustering Now that we have feature engineered our dataset, we can look forward for the task of finding value for money players.</description>
+    </item>
+    
+    <item>
+      <title>Analysing FIFA 19 Data - Part 1</title>
+      <link>https://vatsalyatandon.github.io/posts/fifa-1/</link>
+      <pubDate>Sun, 04 Aug 2019 00:01:30 +0530</pubDate>
+      
+      <guid>https://vatsalyatandon.github.io/posts/fifa-1/</guid>
+      <description>In this blog post, we are going to analyse the complete dataset from the FIFA 19 videogame, containing all the players currently playing professional football at all levels, including some fake players created by EA for future simulations. The dataset was made available by Sofifa.
+We can divide the whole post into 2 segments, namely:
+ Feature Engineering and Analysis
+ Clustering
+  1) Feature Engineering and Analysis First of all let&amp;rsquo;s load the dataset into a Python notebook and see what&amp;rsquo;s inside.</description>
+    </item>
     
     <item>
       <title>About</title>

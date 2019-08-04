@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ml on Vatsalya Tandon</title>
-    <link>https://vatsalyatandon.github.io/tags/ml/</link>
-    <description>Recent content in ml on Vatsalya Tandon</description>
+    <title>python on Vatsalya Tandon</title>
+    <link>https://vatsalyatandon.github.io/tags/python/</link>
+    <description>Recent content in python on Vatsalya Tandon</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Aug 2019 00:02:30 +0530</lastBuildDate>
     
-	<atom:link href="https://vatsalyatandon.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vatsalyatandon.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -36,19 +36,6 @@ We can divide the whole post into 2 segments, namely:
  Feature Engineering and Analysis
  Clustering
   1) Feature Engineering and Analysis First of all let&amp;rsquo;s load the dataset into a Python notebook and see what&amp;rsquo;s inside.</description>
-    </item>
-    
-    <item>
-      <title>Live object detection in browser using YOLO</title>
-      <link>https://vatsalyatandon.github.io/posts/post-2/</link>
-      <pubDate>Wed, 26 Jun 2019 00:01:30 +0530</pubDate>
-      
-      <guid>https://vatsalyatandon.github.io/posts/post-2/</guid>
-      <description>In this blog we are going to develop a live image classifier through webcam feed right in our browser using the model - YOLO
-This whole task requires the following two libraries :
- ml5.js, an easy-to-use ML framework built on top of Tensorflow.js
- p5.js, a JS library to facilitate easy design and drawing functionality
-  1) Create directory and files First of all create a directory of the name of your project (say &amp;ldquo;YOLO-ML5&amp;rdquo;).</description>
     </item>
     
   </channel>

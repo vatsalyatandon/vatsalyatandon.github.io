@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Analysing FIFA 19 Data - Part 2 - Vatsalya Tandon</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Analysing FIFA 19 Data - Part 2" />
+<meta property="og:description" content="Football" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vatsalyatandon.github.io/posts/fifa-2/" />
+<meta property="article:published_time" content="2019-08-04T00:02:30&#43;05:30"/>
+<meta property="article:modified_time" content="2019-08-04T00:02:30&#43;05:30"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Analysing FIFA 19 Data - Part 2"/>
+<meta name="twitter:description" content="Football"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Vatsalya Tandon</h1>
+	<div class="site-description"><h2>Junior Undergraduate, IIT Kanpur</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/vatsalyatandon" title="Github"><i data-feather="github"></i></a><a href="https://www.linkedin.com/in/vatsalyatandon/" title="Linkedin"><i data-feather="linkedin"></i></a><a href="https://www.facebook.com/mynameisvt" title="Facebook"><i data-feather="facebook"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+		<div class="post-header">
+			<h1 class="title">Analysing FIFA 19 Data - Part 2</h1>
+			<div class="meta">Posted at &mdash; Aug 4, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>In this blog post, we are going to analyse the complete dataset from the FIFA 19 videogame, containing all the players currently playing professional football at all levels, including some fake players created by EA for future simulations. The dataset was made available by <a href="https://sofifa.com/">Sofifa</a>.</p>
+
+<p>We can divide the whole post into 2 segments, namely:</p>
+
+<ul>
+<li><p>Feature Engineering and Analysis</p></li>
+
+<li><p>Clustering</p></li>
+</ul>
+
+<p><a href="../fifa-1">Link</a> for part 1.</p>
+
+<hr />
+
+<h2 id="2-clustering">2) Clustering</h2>
+
+<p>Now that we have feature engineered our dataset, we can look forward for the task of finding value for money players. As an example we can start off by analysing fowards in the game, and later we can extend similar code style to vary the parameters for our needs. Now as per the data, the followig playing positions contribute to the collective location of playing as a forward.</p>
+
+<p><code>LS, ST, RS, LF, CF, RF</code></p>
+
+<p>Using this we can sample our dataset with the following determined features-</p>
+
+<p><code>'Name', 'Age', 'Club', 'Finishing', 'HeadingAccuracy', 'Acceleration', 'SprintSpeed', 'ShotPower', 'Positioning', 'Strength', 'Jumping', 'ValueNum'</code></p>
+
+<p>The code for the same is-</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">forwards = [&#39;LS&#39;, &#39;ST&#39;, &#39;RS&#39;, &#39;LF&#39;, &#39;CF&#39;, &#39;RF&#39;]
+sample = data[data[&#39;Position&#39;].isin(forwards)]
+sample = sample[[&#39;Name&#39;, &#39;Age&#39;, &#39;Club&#39;, &#39;Finishing&#39;, &#39;HeadingAccuracy&#39;, &#39;Acceleration&#39;, &#39;SprintSpeed&#39;, &#39;ShotPower&#39;, &#39;Positioning&#39;, &#39;Strength&#39;, &#39;Jumping&#39;, &#39;ValueNum&#39;]]
+sample.head()</pre></div>
+<p>Now, out of all these 18000+ players, in high level competitive football, we can choose to count only the top 2000 players for a healthy estimation. This is not just to seed good players worldwide, but also to eliminate the chances of fake players created by FIFA for simulations in the career mode. After we have done that, we can use KMeans Clustering to cluster players into 5 diffrent cohorts, based on the parameters specified, except Name, Value, Club and Age.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">from sklearn.cluster import KMeans
+flag = sample.drop([&#39;Name&#39;, &#39;ValueNum&#39;, &#39;Club&#39;, &#39;Age&#39;], axis=1)
+flag = np.matrix(flag.values)
+kmeans = KMeans(n_clusters=5).fit(flag)
+sample[&#39;Cohort&#39;] = kmeans.labels_</pre></div>
+<p>As a visualization, we can plot a scatter plot of the Strength vs Finishing of the generated cohort-</p>
+
+<p><img src="../pic10.png" style="float" /></p>
+
+<p>This shows that the players are distributed on all parameters. We can now split the sample into independent datasets based on the cohorts-</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">cohort0 = sample[sample[&#39;Cohort&#39;] == 0]
+cohort1 = sample[sample[&#39;Cohort&#39;] == 1]
+cohort2 = sample[sample[&#39;Cohort&#39;] == 2]
+cohort3 = sample[sample[&#39;Cohort&#39;] == 3]
+cohort4 = sample[sample[&#39;Cohort&#39;] == 4]</pre></div>
+<p>We can now see the descriptions of each sub-dataset as follows-</p>
+
+<p><img src="../pic11.png" style="float" />
+<img src="../pic12.png" style="float" />
+<img src="../pic13.png" style="float" />
+<img src="../pic14.png" style="float" />
+<img src="../pic15.png" style="float" /></p>
+
+<p>Now based on the descriptions, the 4th cohort seems to be the one with the better ratings as compared to the other cohorts. As a matter of fact, the top 5 players in the 4th cohort sorted in the order of their overall ratings are Messi, Ronaldo, Suarez, Lewandowski and Dybala, which are top class.</p>
+
+<p>We can use this cohort to identify players of a similar calibre overall, which are cheap and value for money. For my analysis, I would be focusing on forwards belonging to the range of 10 to 20 Million Euros. The 4th cohort can be sorted on the basis of the value and young players can be identified hence.</p>
+
+<p>When this process is done, following players in the range of 18-25 come up in the range between 10 to 15 million euros.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Name | Club | Value in 2018 | Value Now
+Tammy Abraham - Aston Villa - 10 M - 20 M
+De Tomas - Rayo Vallecano - 11 M - 20 M
+Borja Iglesias - RCD Espanyol - 12 M - 28 M
+M. Dembele - Lyon - 12 M - 27 M
+A. Mitrovic - Fulham - 12 M - 25 M
+Munir - Barcelona - 12.5 M - 10 M
+D. Selke - Hertha BSC - 12.5 M - 18 M
+B. Embolo - Schalke - 12.5 M - 14 M
+W. Weghorst - Wolfsburg - 13 M - 20 M
+Wesley - Club Brugge KV - 13.5 M - 20 M
+P. Schick - Roma - 14 M - 15 M
+G. Simeone - Fiorentina - 15 M - 20 M
+K Toko-Ekambi - Villarreal - 15 M - 17.5 M</pre></div>
+<p>This is just the tip of what we can analyse from the cohorts. As a matter of fact this is just for the case of forwards, with certain predefined parameters. We could tweak all the factors to our preference. In this case alone we saw a profit of 89.5 Million euros, with a decrease in net worth only in 1 out of 13 evaluated players.</p>
+
+<p>Thanks for reading!</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'vatsalyatandon';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vatsalyatandon" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-142779904-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>

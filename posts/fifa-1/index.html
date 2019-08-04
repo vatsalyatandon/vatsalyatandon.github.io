@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Analysing FIFA 19 Data - Part 1 - Vatsalya Tandon</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Analysing FIFA 19 Data - Part 1" />
+<meta property="og:description" content="Football" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vatsalyatandon.github.io/posts/fifa-1/" />
+<meta property="article:published_time" content="2019-08-04T00:01:30&#43;05:30"/>
+<meta property="article:modified_time" content="2019-08-04T00:01:30&#43;05:30"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Analysing FIFA 19 Data - Part 1"/>
+<meta name="twitter:description" content="Football"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Vatsalya Tandon</h1>
+	<div class="site-description"><h2>Junior Undergraduate, IIT Kanpur</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/vatsalyatandon" title="Github"><i data-feather="github"></i></a><a href="https://www.linkedin.com/in/vatsalyatandon/" title="Linkedin"><i data-feather="linkedin"></i></a><a href="https://www.facebook.com/mynameisvt" title="Facebook"><i data-feather="facebook"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/contact">Contact</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+		<div class="post-header">
+			<h1 class="title">Analysing FIFA 19 Data - Part 1</h1>
+			<div class="meta">Posted at &mdash; Aug 4, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>In this blog post, we are going to analyse the complete dataset from the FIFA 19 videogame, containing all the players currently playing professional football at all levels, including some fake players created by EA for future simulations. The dataset was made available by <a href="https://sofifa.com/">Sofifa</a>.</p>
+
+<p>We can divide the whole post into 2 segments, namely:</p>
+
+<ul>
+<li><p>Feature Engineering and Analysis</p></li>
+
+<li><p>Clustering</p></li>
+</ul>
+
+<hr />
+
+<h2 id="1-feature-engineering-and-analysis">1) Feature Engineering and Analysis</h2>
+
+<p>First of all let&rsquo;s load the dataset into a Python notebook and see what&rsquo;s inside. In my case I would be using Google Colab Notebook, because it&rsquo;s relatively faster and easier to maintain datasets using Google Drive. Once we have imported the dataset, we can have a look at the first 5 rows, using the <code>df.head()</code> command, which shows-</p>
+
+<p><img src="../pic1.png" alt="Screenshot" style="float" /></p>
+
+<p>This shows that there are 18207 rows, implying information about 18207 different players, encapsulated via 89 different columns, which are:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&#39;ID&#39;, &#39;Name&#39;, &#39;Age&#39;, &#39;Photo&#39;, &#39;Nationality&#39;, &#39;Flag&#39;, &#39;Overall&#39;, &#39;Potential&#39;, &#39;Club&#39;, &#39;Club Logo&#39;, &#39;Value&#39;, &#39;Wage&#39;, &#39;Special&#39;, &#39;Preferred Foot&#39;, &#39;International Reputation&#39;, &#39;Weak Foot&#39;, &#39;Skill Moves&#39;, &#39;Work Rate&#39;, &#39;Body Type&#39;, &#39;Real Face&#39;, &#39;Position&#39;, &#39;Jersey Number&#39;, &#39;Joined&#39;, &#39;Loaned From&#39;, &#39;Contract Valid Until&#39;, &#39;Height&#39;, &#39;Weight&#39;, &#39;LS&#39;, &#39;ST&#39;, &#39;RS&#39;, &#39;LW&#39;, &#39;LF&#39;, &#39;CF&#39;, &#39;RF&#39;, &#39;RW&#39;, &#39;LAM&#39;, &#39;CAM&#39;, &#39;RAM&#39;, &#39;LM&#39;, &#39;LCM&#39;, &#39;CM&#39;, &#39;RCM&#39;, &#39;RM&#39;, &#39;LWB&#39;, &#39;LDM&#39;, &#39;CDM&#39;, &#39;RDM&#39;, &#39;RWB&#39;, &#39;LB&#39;, &#39;LCB&#39;, &#39;CB&#39;, &#39;RCB&#39;, &#39;RB&#39;, &#39;Crossing&#39;, &#39;Finishing&#39;, &#39;HeadingAccuracy&#39;, &#39;ShortPassing&#39;, &#39;Volleys&#39;, &#39;Dribbling&#39;, &#39;Curve&#39;, &#39;FKAccuracy&#39;, &#39;LongPassing&#39;, &#39;BallControl&#39;, &#39;Acceleration&#39;, &#39;SprintSpeed&#39;, &#39;Agility&#39;, &#39;Reactions&#39;, &#39;Balance&#39;, &#39;ShotPower&#39;, &#39;Jumping&#39;, &#39;Stamina&#39;, &#39;Strength&#39;, &#39;LongShots&#39;, &#39;Aggression&#39;, &#39;Interceptions&#39;, &#39;Positioning&#39;, &#39;Vision&#39;, &#39;Penalties&#39;, &#39;Composure&#39;, &#39;Marking&#39;, &#39;StandingTackle&#39;, &#39;SlidingTackle&#39;, &#39;GKDiving&#39;, &#39;GKHandling&#39;, &#39;GKKicking&#39;, &#39;GKPositioning&#39;, &#39;GKReflexes&#39;, &#39;Release Clause&#39;`</pre></div>
+<h3 id="plots">Plots</h3>
+
+<p>Now, as most players see, the <code>Overall</code> and <code>Potential</code> parameters are critical for determining a player&rsquo;s performance in a game, and we can see that via a countplot. For the Overall parameter, the mean is 66.24 and the standard deviation is 6.9</p>
+
+<p><img src="../pic2.png" alt="Screenshot" style="float" /></p>
+
+<p>And for the Potential, the mean is 71.31 and the standard deviation is 6.1-</p>
+
+<p><img src="../pic3.png" alt="Screenshot" style="float" /></p>
+
+<p>As expected, both the primary ratings are normally distributed, with the potential graph shifted to the right. This is mainly because for most of the younger players, the potential overshoots their overall the the given moment.</p>
+
+<p>Now, we can also look out for distribution of playing postions, which are listed down as follows-</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&#39;RF&#39; &#39;ST&#39; &#39;LW&#39; &#39;GK&#39; &#39;RCM&#39; &#39;LF&#39; &#39;RS&#39; &#39;RCB&#39; &#39;LCM&#39; &#39;CB&#39; &#39;LDM&#39; &#39;CAM&#39; &#39;CDM&#39; &#39;LS&#39; &#39;LCB&#39; &#39;RM&#39; &#39;LAM&#39; &#39;LM&#39; &#39;LB&#39; &#39;RDM&#39; &#39;RW&#39; &#39;CM&#39; &#39;RB&#39; &#39;RAM&#39; &#39;CF&#39; &#39;RWB&#39; &#39;LWB&#39; nan</pre></div>
+<p>As shown above, we can also plout countplots for the same-</p>
+
+<p><img src="../pic4.png" alt="Screenshot" style="float" /></p>
+
+<p>This shows us that there are a lot of strikers and goalkeepers in the professional league, the most sought after psoitions in football as a career, followed by centre backs and centre mids.</p>
+
+<p>We can also plot a boxplot for the Age vs Overall and Age vs Value to see the trends:</p>
+
+<p><img src="../pic5.png" style="float" /></p>
+
+<p>The age bracket from 27 to 32 seems to be the one with the highest average overall rating, the median at 31 seems to be the greatest, primarily because of Lionel Messi!</p>
+
+<p><img src="../pic6.png" style="float" /></p>
+
+<p>Now the Value vs Age plot is highly skewed, due to very less individuals in the game who actually earn that amount of money. Instead we can see the same plot for the top 1000 players sorted on the basis of their overall rating</p>
+
+<p><img src="../pic7.png" style="float" /></p>
+
+<p>Apart from these plots, some of the most popular ones are the radar plots, primarily brought into the picture of football statistics by the company StatsBomb. Among all the parameters we wish to examine the following features in a player-</p>
+
+<p><code>'Crossing',
+       'Finishing', 'HeadingAccuracy', 'ShortPassing', 'Volleys', 'Dribbling',
+       'Curve', 'FKAccuracy', 'LongPassing', 'BallControl', 'Acceleration',
+       'SprintSpeed', 'Agility', 'Reactions', 'Balance', 'ShotPower',
+       'Jumping', 'Stamina', 'Strength', 'LongShots', 'Aggression',
+       'Interceptions', 'Positioning', 'Vision', 'Penalties', 'Composure',
+       'Marking', 'StandingTackle', 'SlidingTackle'</code></p>
+
+<p>And as an example we can have the plots for arguably the 2 best players in the world, Messi and Ronaldo.</p>
+
+<p><img src="../pic8.png" style="float" /></p>
+
+<p><img src="../pic9.png" style="float" /></p>
+
+<p>As seen from the plot, Messi seems to be better in Free Kicks, Dribbling, Short Passing, Vision  Balance, Shot Power and many more, whereas Ronaldo is better in Strength, Stamina, Reactions, Sprint Speed, Long Passing, Heading Accuracy and more.</p>
+
+<h3 id="data-cleaning">Data Cleaning</h3>
+
+<p>We see that the two columns of <code>wage</code> and <code>value</code> are in string format with currency symbols present. We can convert them into numerical data using the following code snippet:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">wagenum = []
+valuenum = []
+for i in range(data.shape[0]):
+    wage = data[&#39;Wage&#39;][i]
+    value = data[&#39;Value&#39;][i]
+    if wage[-1] == &#39;K&#39;:
+        wage = float(wage[1:-1])*1000
+    else:
+        wage = float(wage[1:])
+    if value[-1] == &#39;M&#39;:
+        value = float(value[1:-1])*1000000
+    elif value[-1] == &#39;K&#39;:
+        value = float(value[1:-1])*1000
+    else:
+        value = float(value[1:])*1000
+    wagenum.append(wage)
+    valuenum.append(value)
+data[&#39;WageNum&#39;] = wagenum
+data[&#39;ValueNum&#39;] = valuenum
+data = data.drop([&#39;Value&#39;, &#39;Wage&#39;], axis=1)</pre></div>
+<p>This creates two new columns, <code>WageNum</code> and <code>ValueNum</code> in numerical format.</p>
+
+<p>In the further columns, we see that positional skill numbers have a + sign, indicating an upper limit of strength in that position, for that player. So, that value is a string and we wish to convert them into an integer for further use. The code below, converts it to integers;</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">count = 0
+for i in range(data.shape[0]):
+    for j in range(data.shape[1]):
+      if data.columns[j] in (&#39;LS&#39;, &#39;ST&#39;, &#39;RS&#39;, &#39;LW&#39;, &#39;LF&#39;, &#39;CF&#39;, &#39;RF&#39;, &#39;RW&#39;,
+       &#39;LAM&#39;, &#39;CAM&#39;, &#39;RAM&#39;, &#39;LM&#39;, &#39;LCM&#39;, &#39;CM&#39;, &#39;RCM&#39;, &#39;RM&#39;, &#39;LWB&#39;, &#39;LDM&#39;,
+       &#39;CDM&#39;, &#39;RDM&#39;, &#39;RWB&#39;, &#39;LB&#39;, &#39;LCB&#39;, &#39;CB&#39;, &#39;RCB&#39;, &#39;RB&#39;):
+          value = data.iloc[i][j]
+          if isinstance(value, str):
+              if &#34;+&#34; in value:
+                  num1 = int(value[:value.index(&#34;+&#34;)])
+                  num2 = int(value[value.index(&#34;+&#34;)+1:])
+                  result = num1+num2
+                  data.iat[i, j] = result
+                  count+=1
+print(&#34;Elements changed: &#34;, count)</pre></div>
+<p>As we run it we see, that 419172 cell values get changed.</p>
+
+<p>Apart from this, we would also like to focus on data inputing for missing values. For some selected parameters we can run the following snippet:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">data[&#39;ShortPassing&#39;].fillna(data[&#39;ShortPassing&#39;].mean(), inplace = True)
+data[&#39;Volleys&#39;].fillna(data[&#39;Volleys&#39;].mean(), inplace = True)
+data[&#39;Dribbling&#39;].fillna(data[&#39;Dribbling&#39;].mean(), inplace = True)
+data[&#39;Curve&#39;].fillna(data[&#39;Curve&#39;].mean(), inplace = True)
+data[&#39;FKAccuracy&#39;].fillna(data[&#39;FKAccuracy&#39;], inplace = True)
+data[&#39;LongPassing&#39;].fillna(data[&#39;LongPassing&#39;].mean(), inplace = True)
+data[&#39;BallControl&#39;].fillna(data[&#39;BallControl&#39;].mean(), inplace = True)
+data[&#39;HeadingAccuracy&#39;].fillna(data[&#39;HeadingAccuracy&#39;].mean(), inplace = True)
+data[&#39;Finishing&#39;].fillna(data[&#39;Finishing&#39;].mean(), inplace = True)
+data[&#39;Crossing&#39;].fillna(data[&#39;Crossing&#39;].mean(), inplace = True)</pre></div>
+<p>And for the remaining numeric columns, the unavailabe data refers to the players who are not evaluated on the parameters, for example a goalkeeper being tested how well can he perform if played as a striker. So we fill those columns with 0</p>
+
+<p><code>data.fillna(0, inplace = True)</code></p>
+
+<p>This concludes the Part 1 of the analysis, in the next part we use clustering to analyse similar players of a particular position/skill, to identify value for money options for replacing a player.</p>
+
+<p>Thanks for reading! <a href="../fifa-2">Link</a> for part 2.</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'vatsalyatandon';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vatsalyatandon" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> 
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div><a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-142779904-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>
