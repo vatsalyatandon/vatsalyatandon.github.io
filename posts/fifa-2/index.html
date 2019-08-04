@@ -74,7 +74,7 @@
 
 <h2 id="2-clustering">2) Clustering</h2>
 
-<p>Now that we have feature engineered our dataset, we can look forward for the task of finding value for money players. As an example we can start off by analysing fowards in the game, and later we can extend similar code style to vary the parameters for our needs. Now as per the data, the followig playing positions contribute to the collective location of playing as a forward.</p>
+<p>Now that we have feature engineered our dataset, we can look forward to the task of finding value for money players. As an example, we can start by analysing forwards in the game, and later we can extend similar code style to vary the parameters for our needs. Now as per the data, the following playing positions contribute to the collective location of playing as a forward.</p>
 
 <p><code>LS, ST, RS, LF, CF, RF</code></p>
 
@@ -87,7 +87,7 @@
 sample = data[data[&#39;Position&#39;].isin(forwards)]
 sample = sample[[&#39;Name&#39;, &#39;Age&#39;, &#39;Club&#39;, &#39;Finishing&#39;, &#39;HeadingAccuracy&#39;, &#39;Acceleration&#39;, &#39;SprintSpeed&#39;, &#39;ShotPower&#39;, &#39;Positioning&#39;, &#39;Strength&#39;, &#39;Jumping&#39;, &#39;ValueNum&#39;]]
 sample.head()</pre></div>
-<p>Now, out of all these 18000+ players, in high level competitive football, we can choose to count only the top 2000 players for a healthy estimation. This is not just to seed good players worldwide, but also to eliminate the chances of fake players created by FIFA for simulations in the career mode. After we have done that, we can use KMeans Clustering to cluster players into 5 diffrent cohorts, based on the parameters specified, except Name, Value, Club and Age.</p>
+<p>Now, out of all these 18000+ players, in high-level competitive football, we can choose to count only the top 2000 players for a healthy estimation. This is not just to seed good players worldwide, but also to eliminate the chances of fake players created by FIFA for simulations in the career mode. After we have done that, we can use KMeans Clustering to cluster players into 5 different cohorts, based on the parameters specified, except Name, Value, Club and Age.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">from sklearn.cluster import KMeans
 flag = sample.drop([&#39;Name&#39;, &#39;ValueNum&#39;, &#39;Club&#39;, &#39;Age&#39;], axis=1)
 flag = np.matrix(flag.values)
@@ -130,7 +130,7 @@ Wesley - Club Brugge KV - 13.5 M - 20 M
 P. Schick - Roma - 14 M - 15 M
 G. Simeone - Fiorentina - 15 M - 20 M
 K Toko-Ekambi - Villarreal - 15 M - 17.5 M</pre></div>
-<p>This is just the tip of what we can analyse from the cohorts. As a matter of fact this is just for the case of forwards, with certain predefined parameters. We could tweak all the factors to our preference. In this case alone we saw a profit of 89.5 Million euros, with a decrease in net worth only in 1 out of 13 evaluated players.</p>
+<p>This is just the tip of what we can analyse from the cohorts. As a matter of fact, this is just for the case of forwards, with certain predefined parameters. We could tweak all the factors to our preference. In this case alone we saw a profit of 89.5 million euros, with a decrease in net worth only in 1 out of 13 evaluated players.</p>
 
 <p>Thanks for reading!</p>
 
